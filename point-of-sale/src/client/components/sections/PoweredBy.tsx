@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import { SolanaPayLogo } from '../images/SolanaPayLogo';
+import { WNDOPayLogo } from '../images/WNDOPayLogo';
 import css from './PoweredBy.module.css';
 
 export const PoweredBy: FC = () => {
     return (
         <div className={css.root}>
-            Powered by <SolanaPayLogo />
+            Powered by <WNDOPayLogo />
         </div>
     );
 };

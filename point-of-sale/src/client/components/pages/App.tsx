@@ -7,15 +7,19 @@ import { PublicKey } from '@solana/web3.js';
 import { AppContext, AppProps as NextAppProps, default as NextApp } from 'next/app';
 import { AppInitialProps } from 'next/dist/shared/lib/utils';
 import { FC, useMemo } from 'react';
-import { DEVNET_ENDPOINT } from '../../utils/constants';
+import { DEVNET_ENDPOINT, DEVNET_WNDO_MINT } from '../../utils/constants';
 import { ConfigProvider } from '../contexts/ConfigProvider';
 import { FullscreenProvider } from '../contexts/FullscreenProvider';
 import { PaymentProvider } from '../contexts/PaymentProvider';
 import { ThemeProvider } from '../contexts/ThemeProvider';
 import { TransactionsProvider } from '../contexts/TransactionsProvider';
-import { SolanaPayLogo } from '../images/SolanaPayLogo';
+import { WNDOPayLogo } from '../images/WNDOPayLogo';
 import { SOLIcon } from '../images/SOLIcon';
 import css from './App.module.css';
+import { MAINNET_ENDPOINT, MAINNET_USDC_MINT } from '../../utils/constants';
+import { USDCIcon } from '../images/USDCIcon';
+import { WNDOIcon } from '../images/WNDOIcon';
+
 
 interface AppProps extends NextAppProps {
     host: string;
@@ -69,10 +73,11 @@ const App: FC<AppProps> & { getInitialProps(appContext: AppContext): Promise<App
                                     recipient={recipient}
                                     label={label}
                                     message={message}
-                                    symbol="SOL"
-                                    icon={<SOLIcon />}
+                                    splToken={DEVNET_WNDO_MINT}
+                                    symbol="WNDO"
+                                    icon={<WNDOIcon />}
                                     decimals={9}
-                                    minDecimals={1}
+                                    minDecimals={2}
                                     connectWallet={connectWallet}
                                 >
                                     <TransactionsProvider>
@@ -86,7 +91,7 @@ const App: FC<AppProps> & { getInitialProps(appContext: AppContext): Promise<App
                     </ConnectionProvider>
                 ) : (
                     <div className={css.logo}>
-                        <SolanaPayLogo width={240} height={88} />
+                        <WNDOPayLogo width={240} height={88} />
                     </div>
                 )}
             </FullscreenProvider>
