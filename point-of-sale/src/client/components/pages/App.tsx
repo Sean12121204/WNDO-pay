@@ -14,7 +14,6 @@ import { PaymentProvider } from '../contexts/PaymentProvider';
 import { ThemeProvider } from '../contexts/ThemeProvider';
 import { TransactionsProvider } from '../contexts/TransactionsProvider';
 import { WNDOPayLogo } from '../images/WNDOPayLogo';
-import { SOLIcon } from '../images/SOLIcon';
 import css from './App.module.css';
 import { MAINNET_ENDPOINT, MAINNET_USDC_MINT } from '../../utils/constants';
 import { USDCIcon } from '../images/USDCIcon';
