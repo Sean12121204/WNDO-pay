@@ -1,6 +1,6 @@
 import React, { FC, SVGProps } from 'react';
 
-export const WNDOIcon: FC<SVGProps<SVGSVGElement>> = ({ width = 32, height = 32 }) => {
+export const wndosIcon: FC<SVGProps<SVGSVGElement>> = ({ width = 16, height = 14 }) => {
 
   return (
     <svg
